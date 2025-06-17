@@ -3,12 +3,7 @@ module.exports = {
   helpHint: "Agar confuse ho gaye ho toh yaha message krdi ☞︎︎︎@xnkit69☜︎︎︎ main bata dunga!",
   commandError: "Oh nooo! Kuch toh galat ho gaya... Type `/x on` to start AI",
   startMessage: (name, botname) =>
-    `Hii ${name}!\n\nCommand 👉 `/x on` to start chatbot\n\n\n🌹𝙱𝙾𝚃 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽🇮🇳\n\n
-
-☄️𝗕𝗢𝗧 𝗡𝗔𝗠𝗘☄️ ⚔ ${botName} ⚔\n\n
-
-Developer ☞︎︎︎ Ankit Kumar☜︎︎︎✰\n\n
-
+    `Hii ${name}!\n\n🌹𝙱𝙾𝚃 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽🇮🇳\n\n☄️𝗕𝗢𝗧 𝗡𝗔𝗠𝗘☄️ ⚔ ${botName} ⚔\n\nDeveloper ☞︎︎︎ Ankit Kumar☜︎︎︎✰\n\n
 🄾🅆🄽🄴🅁 🄲🄾🄽🅃🄰🄲🅃 🄻🄸🄽🄺🅂➪\n
 Telegram 👉https://t.me/xnkit69\n
 Instagram 👉 https://instagram.com/aannkkittttt\n
