@@ -8,10 +8,10 @@ const chatHistories = {};
 const autoReplyEnabled = {};
 
 module.exports = {
-  name: "ai",
+  name: "x",
   description: "AI",
-  category: "ai",
-  usage: "/ai on | off | your message",
+  category: "x",
+  usage: "/x on | off | your message",
   cooldown: 2,
   hasPermission: 0,
   credits: "Ankit",
@@ -26,14 +26,14 @@ module.exports = {
     // ON command
     if (userMsg.toLowerCase() === "on") {
       autoReplyEnabled[userId] = true;
-      return ctx.reply("Hyee ! Ai ON...");
+      return ctx.reply("Hey ! AI is on now...Enjoy");
     }
 
     // OFF command
     if (userMsg.toLowerCase() === "off") {
       autoReplyEnabled[userId] = false;
       chatHistories[userId] = [];
-      return ctx.reply("Hmm! Ai auto-reply mode **OFF** ho gaya... Tumne ignore kar diya na?");
+      return ctx.reply("AI mode **OFF** ");
     }
 
     const isReplying = message.reply_to_message?.text;
@@ -49,7 +49,7 @@ module.exports = {
     }
 
     // If still no message to send
-    if (!userMsg) return ctx.reply("❗ Kuch toh likho ya kisi message pe reply karo ai bolke.");
+    if (!userMsg) return ctx.reply("❗ Kuch toh likho ya kisi message pe reply karo x bolke.");
 
     // Build chat history
     if (!chatHistories[userId]) chatHistories[userId] = [];
@@ -70,7 +70,7 @@ module.exports = {
       ctx.reply(reply);
     } catch (err) {
       console.error(err);
-      ctx.reply("Oops ! Thoda confuse ho gayi, thodi der baad try karo.");
+      ctx.reply("Oops ! Thoda confuse ho gaya, thodi der baad try karo.");
     }
   }
 };
