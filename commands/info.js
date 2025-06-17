@@ -43,7 +43,7 @@ Email 👉mailto:xnkitk69@gmail.com
 🌪️ DATE: ${timeNow}
 ✅ Thanks for using my bot ❤ ${botName}`;
 
-    const imagePath = path.join(__dirname, "cache", "info.js");
+    const imagePath = path.join(__dirname, "cache", "info.jpg");
     const file = fs.createWriteStream(imagePath);
 
     https.get(selectedImage, (response) => {
