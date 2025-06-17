@@ -1,7 +1,17 @@
 module.exports = {
-  unknownCommand: "Umm...? Yeh kya tha? Mujhe toh samajh hi nahi aaya!",
-  helpHint: "Agar confuse ho gaye ho toh /help type karo na, main bata dunga!",
-  commandError: "Oh nooo! Kuch toh galat ho gaya... thoda der baad try kar lena please?",
-  startMessage: (name, botname, prefix) =>
-    `Hii ${name}!\nWelcome to *${botname}* 🥳🥳🥳!\nAgar kuch chahiye toh just type \`${prefix}help\`, okayy?`,
+  unknownCommand: "Try `\x ON` to start AI",
+  helpHint: "Agar confuse ho gaye ho toh yaha message krdi ☞︎︎︎@xnkit69☜︎︎︎ main bata dunga!",
+  commandError: "Oh nooo! Kuch toh galat ho gaya... Type `/x ON` to start AI",
+  startMessage: (name, botname) =>
+    `Hii ${name}!\n\n\n🌹𝙱𝙾𝚃 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽🇮🇳\n\n
+
+☄️𝗕𝗢𝗧 𝗡𝗔𝗠𝗘☄️ ⚔ ${botName} ⚔\n\n
+
+Developer ☞︎︎︎ Ankit Kumar☜︎︎︎✰\n\n
+
+🄾🅆🄽🄴🅁 🄲🄾🄽🅃🄰🄲🅃 🄻🄸🄽🄺🅂➪\n
+Telegram 👉https://t.me/xnkit69\n
+Instagram 👉 https://instagram.com/aannkkittttt\n
+Email 👉 xnkitk69@gmail.com\n
+Website 👉 https://xnkit69.netlify.app`,
 };
