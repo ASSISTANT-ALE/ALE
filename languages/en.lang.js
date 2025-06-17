@@ -1,9 +1,9 @@
 module.exports = {
-  unknownCommand: "Try `/x ON` to start AI",
+  unknownCommand: "Try `/x on` to start AI",
   helpHint: "Agar confuse ho gaye ho toh yaha message krdi ☞︎︎︎@xnkit69☜︎︎︎ main bata dunga!",
-  commandError: "Oh nooo! Kuch toh galat ho gaya... Type `/x ON` to start AI",
+  commandError: "Oh nooo! Kuch toh galat ho gaya... Type `/x on` to start AI",
   startMessage: (name, botname) =>
-    `Hii ${name}!\n\n\n🌹𝙱𝙾𝚃 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽🇮🇳\n\n
+    `Hii ${name}!\n\nCommand 👉 `/x on` to start chatbot\n\n\n🌹𝙱𝙾𝚃 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽🇮🇳\n\n
 
 ☄️𝗕𝗢𝗧 𝗡𝗔𝗠𝗘☄️ ⚔ ${botName} ⚔\n\n
 
