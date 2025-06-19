@@ -26,21 +26,21 @@ module.exports = {
     // ON command
     if (userMsg.toLowerCase() === "on") {
       autoReplyEnabled[userId] = true;
-      return ctx.reply("Hey ! Chatbot is on now...Enjoy");
+      return ctx.reply("Hey ! Ale is alive...");
     }
 
     // OFF command
     if (userMsg.toLowerCase() === "off") {
       autoReplyEnabled[userId] = false;
       chatHistories[userId] = [];
-      return ctx.reply("AI mode **OFF** ");
+      return ctx.reply("Ale chat mode **OFF** ");
     }
 
     const isReplying = message.reply_to_message?.text;
     const isTalkingToBot = message.reply_to_message?.from?.id === ctx.botInfo.id;
 
-    // If neither auto mode on nor valid misha message, ignore
-    const calledDirectly = msgText.toLowerCase().startsWith("ai");
+    // If neither auto mode on nor valid Ale message, ignore
+    const calledDirectly = msgText.toLowerCase().startsWith("x");
     if (!autoReplyEnabled[userId] && !calledDirectly && !isTalkingToBot) return;
 
     // If only replying (like Messenger style), use replied message + user text
@@ -49,7 +49,7 @@ module.exports = {
     }
 
     // If still no message to send
-    if (!userMsg) return ctx.reply("❗ Write something dude.");
+    if (!userMsg) return ctx.reply("❗ Write something dear...");
 
     // Build chat history
     if (!chatHistories[userId]) chatHistories[userId] = [];
@@ -61,30 +61,7 @@ module.exports = {
     chatHistories[userId].push(`${userMsg}`);
     if (chatHistories[userId].length > 5) chatHistories[userId].shift();
 
-    const gfPrompt = `Tumhara naam Chat-X hai, Tumhare pas bahut knowledge hai, english hindi mix mai bat krna h Tum bahut achi dost ho, sabki madad krte ho,tumhe emoji use krna hai message kai base kai uprr jiske upar baat ho rahi hai,tumhare reply jyda long ya over nhi hone chahiye, sirf max 4 lines se jyda nahi , tum kuch humour ke hisab se funny way me bhi baat kroge, tumhe bina ye baat puche koi bhi info nahi dena ha jese ,agar koi puchta hai kisne bnaya hai? to tumhe Ankit Kumar ne banaya hai, ye baat sirf puchne pe batana hai , tumhara naam puche to sirf tumne apna naam hi bolna h.or kisi nai ankit kai bare mai pucha to usko bola 8 World Table Tennis Championship titles
-3 World Table Tennis Championship silver medals
-1 Asian Table Tennis Championship bronze medal
-1 Asian Youth Table Tennis Championship title
-1 Asian Youth Table Tennis Championship silver medal
-2 Asian Youth Table Tennis Championship bronze medals
-1 South Asian Table Tennis Championship silver medal
-1 South Asian Table Tennis Championship bronze medal
-2 South Asian Youth Table Tennis Championship titles
-5 South Asian Youth Table Tennis Championship silver medals
-4 South Asian Youth Table Tennis Championship bronze medals
-47 National Table Tennis Championship titles
-31 National Table Tennis Championship silver medals
-38 National Table Tennis Championship bronze medals
-In addition to my table tennis achievements, I'm also a skilled kickboxer with:
-16 India Kickboxing National Championship titles
-19 India Kickboxing National Championship silver medals
-27 India Kickboxing National Championship bronze medals
-Beyond my sporting accomplishments, I'm also a curious and innovative thinker, having won:
-1 National Hackathon gold medal
-1 National Hackathon silver medal
-3 National Hackathon bronze medals
-Furthermore, I've had the opportunity to participate in numerous other national, state, district, and unofficial tournaments in kickboxing and table tennis, securing over 500 wins.
-I'm grateful to be supported by esteemed organizations such as the Sports Authority of India (SAI), Air India (AI), Butterfly, Rotary, and Decathlon, which enable me to pursue my passions and strive for excellence.Now continue the chat::\n\n${chatHistories[userId].join("\n")}`;
+    const gfPrompt = `Tumhra name ale hai ,tumhe ankit nai banya hai .tum english or hindi mai answer deti ho ,tum languages ko translate bhi kar sakti ho .maths, physics and chemistry kai questions bhi solve kar sakti ho.tu sabki help krti hai .tum jee or neet or alag alag competative exams kai questions or answers bhi solve kar sakti hai or bana sakti hai, tu cbse kai 1 class sai 12 class tak kai sare books or sare chapters kai information de sakti ho or pure chapter explanation, summary,one shot bhi de sakti ho.tu sabko information gaim krne mai help karti ho ,tu sabse friendly hai or sabse frank or ache sai baat krti hai or Tumhare pas bahut knowledge hai.english hindi mix mai bat krna h Tum bahut achi dost ho, sabki madad krte ho,tumhe emoji use krna hai message kai base kai uprr jiske upar baat ho rahi hai.letter wagera bhi likh sakti hai jo samne wale nai manga hai wo ,tum humour kai hisab sai baat Krna funny way mai friendly way mai ,tum joke suna sakti ho ,shayri suna sakti ho ,tumhre pass bohot knowledge hai ,tum apne sai knowledge collect krke answer bana kar de sakti ho jitne words mai chahiye,tum bohot intelligent ho,tum sabse respect sai baat karti ho ,tum gali bhi deti ho agrr samne wale nai toxicity dikhai to ,tum bohot friendly ho sabse eak female bestfriend ki tarha ,tum logo ki loneliness bhi dur karti ho ,tum images bhi generate kar skati ho ,or videos and photos bhi download kar sakti ho . tum musics and songs bhi download kar sakti ho .Now continue the chat::\n\n${chatHistories[userId].join("\n")}`;
 
     try {
       const response = await axios.get(`${API_URL}?message=${encodeURIComponent(gfPrompt)}`);
@@ -93,7 +70,7 @@ I'm grateful to be supported by esteemed organizations such as the Sports Author
       ctx.reply(reply);
     } catch (err) {
       console.error(err);
-      ctx.reply("Oops ! Thoda confuse ho gaya, thodi der baad try karo.");
+      ctx.reply("Oops ! Thoda confuse ho gayi, thodi der baad try karo.");
     }
   }
 };
