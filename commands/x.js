@@ -26,7 +26,7 @@ module.exports = {
     // ON command
     if (userMsg.toLowerCase() === "on") {
       autoReplyEnabled[userId] = true;
-      return ctx.reply("Hey ! Ale is alive...");
+      return ctx.reply("Hey ! Ale chat mode **ON**");
     }
 
     // OFF command
